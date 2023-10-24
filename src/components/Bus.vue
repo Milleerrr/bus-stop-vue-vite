@@ -2,9 +2,9 @@
 import { ref } from 'vue'
 import BusStop from './BusStop.vue';
 
-let peopleWaiting = ref(0);
-let capacity = ref(0);
-let passengers = ref(0);
+let peopleWaiting = ref(null);
+let capacity = ref(null);
+let passengers = ref(null);
 
 // Bus methods to retrieve information about the Bus object
 const getSeatsAvailable = () => {
@@ -65,14 +65,14 @@ const initiateBusSequence = () => {
 <template>
     <form id="bus-form">
         <label for="busCapcity">Bus Capacity</label>
-        <input id="busCapcity" @change="setBusCapcity($event)" :value="capacity" type="number" min="0" max="50">
+        <input id="busCapcity" @change="setBusCapcity($event)" placeholder="0" :value="capacity" type="number" min="0" max="50">
 
         <label for="seatsFree">Passengers</label>
-        <input id="seatsFree" @change="setPassengers($event)" :value="passengers" type="number" min="0" max="50">
+        <input id="seatsFree" @change="setPassengers($event)" placeholder="0" :value="passengers" type="number" min="0" max="50">
 
         <BusStop :peopleWaiting="peopleWaiting" @update:peopleWaiting="updatePeopleWaiting" />
 
-        <button id="start-sequence" @click="initiateBusSequence">Start Bus Sequence</button>
+        <button id="start-sequence" @click.prevent="initiateBusSequence">Start Bus Sequence</button>
     </form>
 </template>
 

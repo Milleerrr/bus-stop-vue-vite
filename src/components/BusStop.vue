@@ -17,7 +17,7 @@ const setPeopleWaiting = (e) => {
 
 <template>
   <label for="peopleWaiting">People waiting</label>
-  <input id="peopleWaiting" @change="setPeopleWaiting($event)" :value="peopleWaiting" type="number" min="0" max="50">
+  <input id="peopleWaiting" @change="setPeopleWaiting($event)"  placeholder="0" :value="peopleWaiting" type="number" min="0" max="50">
 </template>
 
 
