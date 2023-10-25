@@ -74,9 +74,7 @@ const initiateBusSequence = () => {
 
         <button id="start-sequence" @click.prevent="initiateBusSequence">Start Bus Sequence</button>
     </form>
-</template>
-
-  
+</template>  
 
 <style scoped>
 

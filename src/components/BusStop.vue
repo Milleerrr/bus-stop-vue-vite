@@ -1,7 +1,5 @@
 <script setup>
-import { toRefs, defineEmits } from 'vue'
-
-const emit = defineEmits();
+import { toRefs } from 'vue'
 
 // Use props to receive peopleWaiting from the parent
 const props = defineProps(['peopleWaiting'])
